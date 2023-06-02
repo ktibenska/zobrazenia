@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Teória</title>
+
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.10.5/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/theorytutorial.css">
+
+</head>
+
+<script src="bootstrap/bootstrap-5.3.0-dist/js/bootstrap.min.js"></script>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info" id="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Zhodné zobrazenia v konštrukčných úlohách</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main_nav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="theory.html">Teória</a></li>
+                <li class="nav-item"><a class="nav-link" href="exercise.html">Úlohy</a></li>
+                <li class="nav-item"><a class="nav-link" href="playground.html">Ihrisko</a></li>
+                <li class="nav-item"><a class="nav-link" href="tutorial.html">Návod</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="lead">
+
+
+    <div class="row content container-fluid text-center">
+
+        <div class="col-2 sidenav">
+            <nav class="navbar" id="side_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">zhodné zobrazenia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stred_sumernost">stredová súmernosť</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#os_sumenost">stredová súmernosť</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#otocenie">otočenie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#posunutie">posunutie</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="col-8 main-text">
+
+            <div class="row" id="zobrazenia"><h2>Zhodné zobrazenia</h2></div>
+
+            <div class="row">
+                <div class="col">
+
+                    Zobrazenie v matematike je predpis, ktorý priraďuje každému prvku z jednej množiny práve jeden prvok
+                    z druhej množiny.
+                    Zobrazenie v rovine priraďuje každému bodu X roviny práve jeden bod X' roviny.
+                    Zhodným zobrazením je vtedy, keď dvom rôznym bodom X, Y priradí body X', Y' tak, že úsečky XY a X'Y'
+                    sú zhodné.
+
+                    Medzi zhodné zobrazenia v rovine patrí osová súmernosť, stredová súmernosť, posunutie, otočenie.
+
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="stred_sumernost"><h3>stredová súmernosť</h3></div>
+
+
+            <div class="row">
+                <div class="col-5">
+                    Stredová súmernosť podľa bodu S priradí každému bodu X v rovine taký bod X', že bod S bude stredom
+                    úsečky XX'.<br>
+                    Niekedy sa nazýva aj zrkadlový obraz.
+                </div>
+                <div class="col-7">
+                    <img src="png/pointSymmetry.png" alt="stredová súmernosť">
+                </div>
+
+            </div>
+            <hr>
+            <div class="row" id="os_sumenost"><h3>osová súmernosť</h3></div>
+
+
+            <div class="row">
+                <div class="col-5">
+                    Pri osovej súmernosti podľa osi o priradíme bodu X taký bod X', že oba body budú ležať na kolmici k
+                    osi o a stred úsečky XX' bude ležať na osi o.
+                </div>
+                <div class="col-7">
+                    <img src="png/axialSymmetry.png" alt="stredová súmernosť">
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="otocenie"><h3>otočenie</h3></div>
+
+
+            <div class="row">
+                <div class="col-5">
+                    Nech je daný bod S a orientovaný uhol α.<br> Otočenie určené bodom S a uhlom α je také
+                    zobrazenie, ktoré každému bodu X priradí bod X' tak, že vzdialenosť |SX| bude rovnaká ako |SX'| a
+                    uhol XSX' bude zhodný s orientovaným uhlom α.<br>
+                    Otáčaniu niekedy hovoríme aj rotácia.
+                </div>
+                <div class="col-7">
+                    <img src="png/rotation.png" alt="otočenie">
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="posunutie"><h3>posunutie</h3></div>
+
+            <div class="row">
+                <div class="col-5">
+                    Nech AB je orientovaná úsečka, posunutie, nazývané aj translácia, je zobrazenie, ktoré každému bodu
+                    X priradí bod X' tak, že orientované úsečky AB a XX' budú rovnako dlhé a súhlasne orientované.
+                </div>
+                <div class="col-7">
+                    <img src="png/translation.png" alt="posunutie">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-2 sidenav">
+
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+</html>

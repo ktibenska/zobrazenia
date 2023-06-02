@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Návod</title>
+
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons-1.10.5/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/theorytutorial.css">
+
+</head>
+
+<script src="bootstrap/bootstrap-5.3.0-dist/js/bootstrap.min.js"></script>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info" id="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Zhodné zobrazenia v konštrukčných úlohách</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main_nav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="theory.html">Teória</a></li>
+                <li class="nav-item"><a class="nav-link" href="exercise.html">Úlohy</a></li>
+                <li class="nav-item"><a class="nav-link" href="playground.html">Ihrisko</a></li>
+                <li class="nav-item"><a class="nav-link" href="tutorial.html">Návod</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="lead">
+
+
+    <div class="row content container-fluid text-center">
+
+        <div class="col-2 sidenav">
+            <nav class="navbar" id="side_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">zoznam krokov a objektov</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#riesenie">kontrola riešenia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ovladanie">ovládanie grafickej plochy a objektov</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#kreslenie">kreslenie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#objekty">geometrické objekty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#zobrazenia">zhodné zobrazenia</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="col-8 main-text">
+            <div class="row"><h2>Návod</h2>
+                <div class="col">
+                    V tomto návode je vysvetlené ovládanie všetkých tlačidiel, ktoré sa v aplikácii nachádzajú.<br>
+                    <br>
+                    Geometrické útvary sa dajú vytvárať pomocou tlačidiel alebo krokov, zápis takýchto krokov je
+                    vysvetlený pri každom type
+                    objektu.<br>
+                    V príkazoch typy objektov nemôžu obsahovať diakritiku, príkazy musia byť zakončené znamienkom plus +
+                    alebo bodkočiarkou ;
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="kroky"><h3>zoznam krokov a objektov</h3></div>
+            <hr>
+
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-primary btn-lg bi bi-skip-backward"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>krok späť</h5>
+                </div>
+                <div class="col-6">
+                    Posledný vykonaný krok sa vymaže.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-light btn-lg bi bi-box"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>zoznam objektov</h5>
+                </div>
+                <div class="col-6">
+                    V tomto zozname sú vypísané všetky objekty v grafickej ploche.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-light btn-lg bi bi-skip-end"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>zoznam krokov</h5>
+                </div>
+                <div class="col-6">
+                    V tomto zozname sú vypísané všetky vykonané kroky, napríklad vytváranie objektov, zobrazenia, aj
+                    presun.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-primary bi bi-plus-lg"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>pridaj krok</h5>
+                </div>
+                <div class="col-6">
+                    Do textového poľa môžeš zadať krok, kliknutím na toto tlačidlo sa pridá do zoznamov a vykreslí.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-light btn-lg bi bi-pencil-square"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>editor krokov</h5>
+                </div>
+                <div class="col-6">
+                    Do tohto textového poľa sa dajú vygenerovať alebo zadávať kroky.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-primary bi bi-arrow-repeat"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>vygeneruj kroky</h5>
+                </div>
+                <div class="col-6">
+                    Do textového poľa sa vygenerujú aktuálne vykonané kroky v textovej forme.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-primary bi bi-play"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>spusti kroky</h5>
+                </div>
+                <div class="col-6">
+                    kliknutím na toto tlačidlo sa pridajú a vykreslia kroky z textového poľa.
+                    Pozor, všetky vykonané kroky, ktoré v ňom nie sú zadané sa vymažú!
+                </div>
+            </div>
+
+            <hr>
+            <div class="row"><h3 id="riesenie">kontrola riešenia</h3></div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg bi-search"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>označ riešenie</h5>
+                </div>
+                <div class="col-6">
+                    Klikni na objekt, ktorý považuješ za riešenie úlohy, sprístupní sa tlačidlo na kontrolu.
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-primary btn-lg bi bi-star-fill">?</button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>skontroluj riešenie</h5>
+
+                </div>
+                <div class="col-6">
+                    Keď máš označené riešenie, týmto tlačidlom zistíš, či je správne.
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-primary btn-lg bi bi-lightbulb"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>zobraz riešenie</h5>
+
+                </div>
+                <div class="col-6">
+                    Keď už si nevieš rady, kliknutím na toto tlačidlo sa ti zobrazí jedno z možných riešení úlohy.
+                    Môžeš ho skopírovať a spustiť v editore krokov.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row" id="ovladanie"><h3>ovládanie grafickej plochy a objektov</h3></div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="move.svg" alt="presun"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>presun</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím a ťahaním geometrického objektu ho môžeš presúvať.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <label for="color_selector" class="bi bi-palette"></label>
+                    <input class="input-block-level btn btn-light outline-light form-control form-control-color"
+                           type="color" id="color_selector" value="#000000">
+                </div>
+                <div class="col-2 caption">
+                    <h5>vyber farbu</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na farebný obdĺžnik vyber farbu, ktorou budeš rysovať a kresliť.
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg bi-arrows-move"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>posúvaj plochu</h5>
+
+                </div>
+                <div class="col-6">
+                    Kliknutím a ťahaním sa môžeš pohybovať po grafickej ploche.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg bi bi-trash"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>zmaž všetko</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na tlačidlo sa vymažú všetky objekty, geometrické aj nakreslené (okrem zadaných).
+                </div>
+            </div>
+
+            <hr>
+            <div class="row" id="kreslenie"><h3>kreslenie</h3></div>
+            <hr>
+
+
+            <div class="row">
+                <div class="col-2 button_col form-switch">
+                    <label class="bi bi-eye" for="visible_drawing_switch"></label>
+                    <input class="input-block-level form-check-input" type="checkbox"
+                           id="visible_drawing_switch" checked>
+                </div>
+                <div class="col-2 caption">
+                    <h5>zobraz nákresy</h5>
+                </div>
+                <div class="col-6">
+                    Môžeš prepnúť, či budú tvoje nákresy viditeľné, alebo nie.
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg bi-pencil-fill"></button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>kresli</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím a ťahaním po ploche môžeš kresliť.
+                    <p class="step_text">
+                        kreslená čiara sa dá zapísať ako krok, musí obsahovať farbu a dvojice všetkých jej bodov
+                        oddelené čiarkami:
+                    <p>
+                        <samp>ciara #000000 (542 282, 546 278, 551 271, 556 265);</samp>
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="nopencil.svg" alt="vymaž obrázok"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>vymaž obrázok</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na toto tlačidlo sa vymažú tvoje nákresy (geometrické objekty zostanú).
+                </div>
+            </div>
+            <hr>
+
+            <div class="row" id="objekty"><h3>geometrické objekty</h3></div>
+            <hr>
+
+
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="point.svg" alt="bod"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>bod</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na plochu sa vytvorí bod.<br>
+                    Ak daným bodom prechádzajú dve priamky alebo úsečky, vytvorí sa priesečník.
+                    <p class="step_text">
+                        krok na vytvorenie bodu musí obsahovať názov, súradnice a farbu:
+                    <p>
+                        <samp>bod A(100, 200) #000000;</samp>
+                    <p class="step_text">
+                        krok na priesečník musí obsahovať názov priesečníka a oboch úsečiek alebo priamok:
+                    <p>
+                        <samp>priesecnik X(pAB, pCD) #000000;</samp>
+                </div>
+            </div>
+
+
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="segment.svg" alt="úsečka"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>úsečka</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na plochu sa vytvorí prvý bod, kliknutím znova sa vytvorí druhý bod úsečky.
+                    <p class="step_text">
+                        krok musí obsahovať názov úsečky a názvy dvoch už existujúcich bodov:
+                    </p>
+                    <samp>usecka uAB(A, B);</samp>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="line.svg" alt="priamka"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>priamka</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na plochu sa vytvorí prvý bod, kliknutím znova sa vytvorí druhý bod priamky.
+                    <p class="step_text">
+                        krok musí obsahovať názov priamky a názvy dvoch už existujúcich bodov:
+                    </p>
+                    <samp>priamka pAB(A, B);</samp>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="polygon.svg" alt="mnohouholník"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>mnohouholník</h5>
+                </div>
+                <div class="col-6">
+                    Klikaním na plochu sa vytvárajú body mnohouholníka a úsečky medzi nimi.
+                    Mnohouholník sa dokončí pri kliknutí na prvý z jeho bodov.
+                    <p class="step_text">
+                        krok musí obsahovať názov mnohouholníka a všetky názvy jeho už existujúcich bodov:
+                    </p>
+                    <samp>mnohouholnik ABCD(A, B, C, D);</samp>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="circle.svg" alt="kružnica"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>kružnica</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím sa vytvorí stred kružnice, druhým kliknutím sa vytvorí bod na kružnici a nakreslí sa
+                    kružnica medzi nimi.
+
+                    <p class="step_text">
+                        krok musí obsahovať názov kružnice, názov dvoch existujúcich bodov – jej stredu a bodu na
+                        kružnici:
+                    </p>
+                    <samp>kruznica kAB(A, B);</samp>
+                </div>
+            </div>
+
+            <hr>
+            <div class="row" id="zobrazenia"><h3>zhodné zobrazenia</h3></div>
+            <hr>
+
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="symmetry.svg" alt="súmernosť"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>súmernosť</h5>
+                </div>
+                <div class="col-6">
+                    Kliknutím na objekt sa označí vzor súmernosti.<br>
+                    Druhým kliknutím vyberieš stred súmernosti, môže to byť bod alebo priamka.<br>
+                    Následne sa vytvorí obraz.
+                    <p class="step_text">
+                        krok musí obsahovať názov obrazu, názov jej vzoru a stredu súmernosti:
+                    </p>
+                    <samp>sumernost A'(A, B);</samp>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="rotation.svg" alt="otočenie"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>otočenie</h5>
+                </div>
+                <div class="col-6">
+                    Vľavo pod tlačidlami sa zobrazí textové pole, zadaj veľkosť stupňa otočenia, môže byť kladná, alebo
+                    záporná.
+                    Kliknutím na objekt sa označí objekt, ktorý sa bude otáčať.<br>
+                    Druhým kliknutím vyberieš stredový bod otočenia.<br>
+                    Následne sa vytvorí obraz.
+
+                    <p class="step_text">
+                        krok musí obsahovať názov vytvoreného objektu, názov vzoru a stredu otočenia, veľkosť uhlu v
+                        stupňoch:
+                    </p>
+                    <samp>otocenie A'(A, B, 90);</samp>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="translation.svg" alt="posunutie"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>posunutie</h5>
+
+                </div>
+                <div class="col-6">
+                    Vľavo pod tlačidlami sa zobrazia dve textové polia, zadaj do nich hodnoty o koľko sa vzor posunie.
+                    Do prvého zadaj hodnotu x a do druhého y, môžu byť kladné alebo záporné.<br>
+                    Kliknutím na objekt sa následne sa vytvorí jeho posunutý obraz.
+
+                    <p class="step_text">
+                        krok musí obsahovať názov vytvoreného objektu, názov vzoru, a hodnoty x a y, o ktoré sa objekt
+                        posunie:
+                    </p>
+                    <samp>posunutie A'(A, 50, 100);</samp>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="perpendicular.svg" alt="kolmica"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>kolmica</h5>
+                </div>
+                <div class="col-6">
+                    Klikni na priamku alebo úsečku, v kliknutom bode sa kolmo na ňu vytvorí nová čiara.
+
+                    <p class="step_text">
+                        krok musí obsahovať názov priamky alebo úsečky, hodnoty x a y, v ktorých na ňu bude kolmá:
+                    </p>
+                    <samp>kolmica AB'(AB, 50, 100);</samp>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2 button_col">
+                    <button class="btn btn-secondary btn-lg">
+                        <img src="parallel.svg" alt="rovnobežka"/>
+                    </button>
+                </div>
+                <div class="col-2 caption">
+                    <h5>rovnobežka</h5>
+                </div>
+                <div class="col-6">
+                    Klikni na priamku alebo úsečku, rovnobežne k nej sa vytvorí nová čiara.
+                    <p class="step_text">
+                        krok musí obsahovať názov priamky alebo úsečky a jej vzdialenosť od rovnobežky:
+                    </p>
+                    <samp>rovnobezka AB'(AB, 200);</samp>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-2 sidenav">
+
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+main {
+    background: #f1f1f1;
+    pointer-events: all;
+}
+
+.container-fluid {
+    pointer-events: all;
+    height: 100%;
+}
+
+.main-text {
+    text-align: left;
+
+    background: white;
+    padding: 30px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.main-text .row {
+    padding: 30px;
+    margin: 0;
+}
+
+.main-text .btn {
+    height: 2.5em;
+    width: 3.5em;
+}
+
+.step_text {
+    border-top: lightgray solid 1px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: 500;
+
+    font-size: 17px;
+}
+
+samp {
+    background: lightcyan;
+    padding: 0;
+    font-weight: bold;
+}
+
+
+.content {
+    width: 100%;
+}
+
+
+.sidenav {
+    height: 100vh;
+    text-align: left;
+    font-size: 20px;
+
+}
+
+#side_nav {
+    align-content: center;
+    padding: 30px;
+    top: 10vh;
+    position: fixed;
+
+    width: inherit;
+}
+
+.sidenav a {
+    border-radius: 10px;
+    margin: 10px;
+    height: 100%;
+    font-weight: bold;
+    width: inherit;
+}
+
+.sidenav a:hover {
+    color: #20c997;
+
+}
+
+.button_col {
+    margin-left: 50px;
+}
+
+
+.index_text {
+    margin: 20px;
+}
+
+.index_text a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    background: lightcyan;
+}
+
+.index_text a:hover {
+    color: #20c997;
+}
+
+#good_luck {
+    text-align: center;
+    font-weight: bold;
+    color: #20c997;
+}
+
+#footer {
+    font-weight: 400;
+    color: #20c997;
+
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+}
+
+.main-text .col-7 img{
+    margin-left: 50px;
+    width: inherit;
+}
+
+
+@media (max-width: 1000px) {
+    .sidenav a {
+        display: none;
+    }
+}

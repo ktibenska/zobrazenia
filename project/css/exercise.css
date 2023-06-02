@@ -1,0 +1,47 @@
+
+
+
+/*zadanie*/
+
+#exercise_text {
+    min-height: 10vh;
+    max-height: 10vh;
+    margin: 10px 20px;
+    align-content: center;
+}
+
+#exercise_title {
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+}
+
+#exercise_title_row {
+    min-height: 4vh;
+    max-height: 4vh;
+
+}
+
+
+/*check solution*/
+
+#check_solution {
+    min-height: 20vh;
+    max-height: 20vh;
+
+    align-items: end;
+}
+
+#check_solution_button {
+    min-height: 10vh;
+    max-height: 10vh;
+    border-radius: 10px;
+
+
+    align-self: end;
+
+    font-size: 110%;
+}
+
+
+

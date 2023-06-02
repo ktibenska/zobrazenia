@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   fill="currentColor"
+   class="bi bi-slash-lg"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="parallel.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="26.15625"
+     inkscape:cx="12.291517"
+     inkscape:cy="5.4671446"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <g
+     style="fill:#ffffff"
+     id="g246"
+     transform="matrix(0.84914374,0,0,0.84216674,3.1354561,-3.1879039)" />
+  <g
+     style="fill:#ffffff"
+     id="g415"
+     transform="matrix(0.85714285,0,0,0.85714285,-0.85714284,-0.85714283)" />
+  <g
+     style="fill:#ffffff"
+     id="g459"
+     transform="matrix(0.85714285,0,0,0.85714285,-1.7137443,-1.7137443)" />
+  <g
+     style="fill:#ffffff"
+     id="g539"
+     transform="matrix(0.9998729,0,0,0.9998729,-1.9991143,-1.9988521)">
+    <path
+       fill-rule="evenodd"
+       d="m 13.854,2.146 a 0.5,0.5 0 0 1 0,0.708 l -11,11 A 0.5006316,0.5006316 0 0 1 2.146,13.146 l 11,-11 a 0.5,0.5 0 0 1 0.708,0 z"
+       id="path530"
+       style="fill:#ffffff" />
+  </g>
+  <g
+     style="fill:#ffffff"
+     id="g247"
+     transform="matrix(0.85714285,0,0,0.85714285,1.2857143,-3)">
+    <path
+       d="m 8,9.5 a 1.5,1.5 0 1 0 0,-3 1.5,1.5 0 0 0 0,3 z"
+       id="path237"
+       style="fill:#ffffff" />
+  </g>
+  <g
+     style="fill:#ffffff"
+     id="g247-3"
+     transform="matrix(0.85714285,0,0,0.85714285,-3,-5.7440108)">
+    <path
+       d="m 8,17.701346 a 1.5,1.5 0 1 0 0,-3 1.5,1.5 0 0 0 0,3 z"
+       id="path237-9"
+       style="fill:#ffffff" />
+  </g>
+  <g
+     style="fill:#ffffff"
+     id="g246-5"
+     transform="matrix(0.84914374,0,0,0.84216674,7.1354556,0.81209687)" />
+  <g
+     style="fill:#ffffff"
+     id="g415-7"
+     transform="matrix(0.85714285,0,0,0.85714285,3.1428572,3.1428576)" />
+  <g
+     style="fill:#ffffff"
+     id="g459-1"
+     transform="matrix(0.85714285,0,0,0.85714285,2.2862557,2.2862559)" />
+  <g
+     style="fill:#ffffff"
+     id="g539-2"
+     transform="matrix(0.9998729,0,0,0.9998729,2.0008857,2.0011479)">
+    <path
+       fill-rule="evenodd"
+       d="m 13.854,2.146 a 0.5,0.5 0 0 1 0,0.708 l -11,11 A 0.5006316,0.5006316 0 0 1 2.146,13.146 l 11,-11 a 0.5,0.5 0 0 1 0.708,0 z"
+       id="path530-3"
+       style="fill:#ffffff" />
+  </g>
+  <g
+     style="fill:#ffffff"
+     id="g247-39"
+     transform="matrix(0.85714285,0,0,0.85714285,5.2857146,0.99999987)" />
+  <g
+     style="fill:#ffffff"
+     id="g247-3-1"
+     transform="matrix(0.85714285,0,0,0.85714285,1,-1.7440101)" />
+</svg>
