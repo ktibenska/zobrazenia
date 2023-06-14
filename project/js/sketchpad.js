@@ -46,7 +46,10 @@ var Sketchpad = /** @class */ (function () {
                 this.moveCanvas = true;
                 break;
             case "move" /* Types.MOVE */:
-                this.setSelected(this.isClickedObject(x, y));
+                var clicked = this.isClickedObject(x, y);
+                if (clicked != null && clicked.isStartObject)
+                    clicked = null;
+                this.setSelected(clicked);
                 this.newPoints.push(new Point(new Coordinates(0, 0), this.color));
                 break;
         }
@@ -344,6 +347,7 @@ var Sketchpad = /** @class */ (function () {
         this.drawings.length = 0;
         this.undoButton.classList.add('disabled');
         this.id = -1;
+        this.pointCount = 0;
         if (keepStartSteps) {
             var newSteps = this.steps.filter(function (o) { return o.isStartStep == true; });
             this.steps.length = 0;
@@ -357,7 +361,6 @@ var Sketchpad = /** @class */ (function () {
         }
         this.updateStepList();
         this.updateObjectList(true);
-        this.pointCount = 0;
         this.redraw();
     };
     /**
@@ -507,7 +510,7 @@ var Sketchpad = /** @class */ (function () {
             return;
         }
         var lastStep = this.steps.pop();
-        if (lastStep.type == "rotation" /* Types.ROTATION */ || lastStep.type == "symmetry" /* Types.SYMMETRY */ || lastStep.type == "translation" /* Types.TRANSLATION */) {
+        if (lastStep.type == "rotation" /* Types.ROTATION */ || lastStep.type == "symmetry" /* Types.SYMMETRY */ || lastStep.type == "translation" /* Types.TRANSLATION */ || lastStep.type == "parallel" /* Types.PARALLEL */ || lastStep.type == "perpendicular" /* Types.PERPENDICULAR */) {
             var lastPosition = lastStep.args['position'];
             var lastObject = this.objects[this.objects.length - 1];
             while (lastObject.get()['position'] == lastPosition) {

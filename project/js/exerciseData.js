@@ -14,7 +14,7 @@ var ExerciseData = /** @class */ (function () {
             2: "sumernost pA'0B'0 (pAB, S1);<br>\n            sumernost kS'1K'1 (k, S2);<br>\n            bod A(783, 350) #000000;<br>\n            sumernost A'2 (A, S2);<br>\n            sumernost A'3 (A, S1);<br>\n            usecka sA'3A'2(A'3, A'2);<br>\n            usecka sA'2A(A'2, A);<br>\n            usecka sAA'3(A, A'3);<br>\n            mnohouholnik A'3A'2A(A'3, A'2, A);",
             3: "sumernost A'0 (A, C, D);<br>\n            sumernost B'1 (B, C, D);<br>\n            usecka sAA'0(A, A'0);<br>\n            usecka sBB'1(B, B'1);<br>\n            usecka sBA'0(B, A'0);<br>\n            usecka sAB'1(A, B'1);<br>\n            priesecnik E(pCD, sBA'0);",
             4: "posunutie kS1'0K1'0 (k1, 200, 0);<br>\n            bod A(650, 400) #000000;<br>\n            posunutie A'1 (A, -200, 0);<br>\n            usecka sA'1A(A'1, A);",
-            5: "posunutie sE'0F'0 (sEF, -100, 0);<br>\n            rovnobezka pA'1B'1(pAB, 200);<br>\n            priesecnik A(pAB,S pCD);<br>\n            priesecnik B(pCD, pA'1B'1);<br>\n            otocenie B'2 (B, A, -90);<br>\n            otocenie A'3 (A, B'2, -90);<br>\n            usecka sAB(A, B);<br>\n            usecka sBA'3(B, A'3);<br>\n            usecka sA'3B'2(A'3, B'2);<br>\n            usecka sB'2A(B'2, A);<br>\n            mnohouholnik ABA'3B'2(A, B, A'3, B'2);"
+            5: "posunutie sE'0F'0 (sEF, -100, 0);<br>\n            rovnobezka pA'1B'1(pAB, 200);<br>\n            priesecnik A(pAB, pCD);<br>\n            priesecnik B(pCD, pA'1B'1);<br>\n            otocenie B'2 (B, A, -90);<br>\n            otocenie A'3 (A, B'2, -90);<br>\n            usecka sAB(A, B);<br>\n            usecka sBA'3(B, A'3);<br>\n            usecka sA'3B'2(A'3, B'2);<br>\n            usecka sB'2A(B'2, A);<br>\n            mnohouholnik ABA'3B'2(A, B, A'3, B'2);"
         };
         this.allStartingObjects = {
             0: "bod A(300, 250) #000000;\n            bod B(500, 250) #000000;\n            bod C(500, 50) #000000;\n            bod D(300, 50) #000000;\n            usecka sAB(A, B);\n            usecka sBC(B, C);\n            usecka sCD(C, D);\n            usecka sDA(D, A);\n            mnohouholnik ABCD(A, B, C, D);\n            bod S(400, 350) #000000;\n            bod F(800, 50) #000000;\n            bod G(550, 450) #000000;\n            priamka pFG(F, G);",
@@ -37,14 +37,21 @@ var ExerciseData = /** @class */ (function () {
                 if (o instanceof Line) {
                     if (o.isLine)
                         return false;
-                    if (o.point1.position instanceof Intersection) {
-                        if (o.point2.position instanceof TransformedPosition && o.point2.position.transformation instanceof PointSymmetry) {
-                            var s = sketchpad.objectNames['S'];
-                            var fg = sketchpad.objectNames['pFG'];
-                            if (o.isClicked(s.getX(), s.getY()) && fg.isClicked(o.point2.getX(), o.point2.getY()))
-                                return true;
-                        }
+                    var ABCD = [sketchpad.objectNames['sAB'], sketchpad.objectNames['sBC'], sketchpad.objectNames['sCD'], sketchpad.objectNames['sDA']];
+                    var isOnABCD = false;
+                    for (var _i = 0, ABCD_1 = ABCD; _i < ABCD_1.length; _i++) {
+                        var segment = ABCD_1[_i];
+                        if (segment.isClicked(o.point1.getX(), o.point1.getY()))
+                            isOnABCD = true;
                     }
+                    if (!isOnABCD)
+                        return false;
+                    var s = sketchpad.objectNames['S'];
+                    var fg = sketchpad.objectNames['pFG'];
+                    if (s.distance(o.point1.getX(), o.point1.getY()) != s.distance(o.point2.getX(), o.point2.getY()))
+                        return false;
+                    if (o.isClicked(s.getX(), s.getY()) && fg.isClicked(o.point2.getX(), o.point2.getY()))
+                        return true;
                 }
                 return false;
             },
@@ -74,13 +81,16 @@ var ExerciseData = /** @class */ (function () {
                         return false;
                     var p0 = o.points[0];
                     var p1 = o.points[1];
-                    if (p0.position instanceof TransformedPosition && p1.position instanceof TransformedPosition) {
-                        if (p0.position.transformation instanceof PointSymmetry && p1.position.transformation instanceof PointSymmetry) {
-                            var p = sketchpad.objectNames['pAB'];
-                            var k = sketchpad.objectNames['k'];
-                            return p.isClicked(p0.getX(), p0.getY()) && k.isClicked(p1.getX(), p1.getY());
-                        }
-                    }
+                    var p2 = o.points[2];
+                    var s1 = sketchpad.objectNames['S1'];
+                    var s2 = sketchpad.objectNames['S2'];
+                    if (Math.abs(s1.distance(p2.getX(), p2.getY()) - s1.distance(p0.getX(), p0.getY())) > 1)
+                        return false;
+                    if (Math.abs(s2.distance(p1.getX(), p1.getY()) - s2.distance(p2.getX(), p2.getY())) > 1)
+                        return false;
+                    var p = sketchpad.objectNames['pAB'];
+                    var k = sketchpad.objectNames['k'];
+                    return p.isClicked(p0.getX(), p0.getY()) && k.isClicked(p1.getX(), p1.getY());
                 }
                 return false;
             },

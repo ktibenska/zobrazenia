@@ -32,6 +32,7 @@ class ExerciseData {
             usecka sFF'3(F, F'3);<br>
             usecka sF'3G(F'3, G);<br>
             mnohouholnik GG'2FF'3(G, G'2, F, F'3);`,
+
         2: `sumernost pA'0B'0 (pAB, S1);<br>
             sumernost kS'1K'1 (k, S2);<br>
             bod A(783, 350) #000000;<br>
@@ -41,6 +42,7 @@ class ExerciseData {
             usecka sA'2A(A'2, A);<br>
             usecka sAA'3(A, A'3);<br>
             mnohouholnik A'3A'2A(A'3, A'2, A);`,
+
         3: `sumernost A'0 (A, C, D);<br>
             sumernost B'1 (B, C, D);<br>
             usecka sAA'0(A, A'0);<br>
@@ -56,7 +58,7 @@ class ExerciseData {
 
         5: `posunutie sE'0F'0 (sEF, -100, 0);<br>
             rovnobezka pA'1B'1(pAB, 200);<br>
-            priesecnik A(pAB,S pCD);<br>
+            priesecnik A(pAB, pCD);<br>
             priesecnik B(pCD, pA'1B'1);<br>
             otocenie B'2 (B, A, -90);<br>
             otocenie A'3 (A, B'2, -90);<br>
@@ -142,14 +144,21 @@ class ExerciseData {
         0: function (sketchpad, o): boolean {
             if (o instanceof Line) {
                 if (o.isLine) return false;
-                if (o.point1.position instanceof Intersection) {
-                    if (o.point2.position instanceof TransformedPosition && o.point2.position.transformation instanceof PointSymmetry) {
-                        let s = sketchpad.objectNames['S'];
-                        let fg = sketchpad.objectNames['pFG'];
 
-                        if (o.isClicked(s.getX(), s.getY()) && fg.isClicked(o.point2.getX(), o.point2.getY())) return true;
-                    }
+                let ABCD = [sketchpad.objectNames['sAB'], sketchpad.objectNames['sBC'], sketchpad.objectNames['sCD'], sketchpad.objectNames['sDA']];
+
+                let isOnABCD = false;
+                for (let segment of ABCD) {
+                    if (segment.isClicked(o.point1.getX(), o.point1.getY())) isOnABCD = true;
                 }
+                if (!isOnABCD) return false;
+
+                let s = sketchpad.objectNames['S'];
+                let fg = sketchpad.objectNames['pFG'];
+
+                if (s.distance(o.point1.getX(), o.point1.getY()) != s.distance(o.point2.getX(), o.point2.getY())) return false;
+
+                if (o.isClicked(s.getX(), s.getY()) && fg.isClicked(o.point2.getX(), o.point2.getY())) return true;
             }
             return false;
         },
@@ -179,15 +188,19 @@ class ExerciseData {
                 if (o.points.length != 3) return false;
                 let p0 = o.points[0];
                 let p1 = o.points[1];
+                let p2 = o.points[2];
 
-                if (p0.position instanceof TransformedPosition && p1.position instanceof TransformedPosition) {
-                    if (p0.position.transformation instanceof PointSymmetry && p1.position.transformation instanceof PointSymmetry) {
-                        let p = sketchpad.objectNames['pAB'];
-                        let k = sketchpad.objectNames['k'];
+                let s1 = sketchpad.objectNames['S1'];
+                let s2 = sketchpad.objectNames['S2'];
 
-                        return p.isClicked(p0.getX(), p0.getY()) && k.isClicked(p1.getX(), p1.getY());
-                    }
-                }
+                if (Math.abs(s1.distance(p2.getX(), p2.getY()) - s1.distance(p0.getX(), p0.getY()))>1) return false;
+                if (Math.abs(s2.distance(p1.getX(), p1.getY()) - s2.distance(p2.getX(), p2.getY()))>1) return false;
+
+                let p = sketchpad.objectNames['pAB'];
+                let k = sketchpad.objectNames['k'];
+
+                return p.isClicked(p0.getX(), p0.getY()) && k.isClicked(p1.getX(), p1.getY());
+
             }
             return false;
         },

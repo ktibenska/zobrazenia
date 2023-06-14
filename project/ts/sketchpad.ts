@@ -79,7 +79,9 @@ class Sketchpad {
                 break;
 
             case Types.MOVE:
-                this.setSelected(this.isClickedObject(x, y));
+                let clicked = this.isClickedObject(x, y);
+                if (clicked != null && clicked.isStartObject) clicked = null;
+                this.setSelected(clicked);
 
                 this.newPoints.push(new Point(new Coordinates(0, 0), this.color))
 
@@ -445,6 +447,7 @@ class Sketchpad {
         this.undoButton.classList.add('disabled');
 
         this.id = -1;
+        this.pointCount = 0;
 
         if (keepStartSteps) {
             let newSteps = this.steps.filter(o => o.isStartStep == true);
@@ -460,7 +463,6 @@ class Sketchpad {
         this.updateStepList();
         this.updateObjectList(true);
 
-        this.pointCount = 0;
 
         this.redraw();
     }
@@ -633,7 +635,7 @@ class Sketchpad {
         }
 
         let lastStep = this.steps.pop();
-        if (lastStep.type == Types.ROTATION || lastStep.type == Types.SYMMETRY || lastStep.type == Types.TRANSLATION) {
+        if (lastStep.type == Types.ROTATION || lastStep.type == Types.SYMMETRY || lastStep.type == Types.TRANSLATION || lastStep.type == Types.PARALLEL || lastStep.type == Types.PERPENDICULAR) {
             let lastPosition = lastStep.args['position'];
 
             let lastObject = this.objects[this.objects.length - 1];
